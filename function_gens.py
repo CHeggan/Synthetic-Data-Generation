@@ -29,9 +29,23 @@ import numpy as np
 ###########################
 def exp_1d(x_space, n_min, n_max, variant='any'):
     # variant: exp(x^n), exp (x*n), exp(x/n)
-    if variant == 'any':
+    if variant == 'exponent':
+        n = random.uniform(n_min, n_max)
+        mod_x_space = x_space**n
+        y_space = np.exp(mod_x_space)
+
+    elif variant == 'mult':
+        n = random.uniform(n_min, n_max)
+        mod_x_space = x_space*n
+        y_space = np.exp(mod_x_space) 
+
+    elif variant == 'any':
         variant = random.choice(['exponent', 'mult'])
-        sample, variant, n = random_exp_sample()
+        y_space, variant, n = exp_1d(x_space, n_min, n_max, variant)
+
+    return y_space, variant, n
+
+
 
     
 ###########################
