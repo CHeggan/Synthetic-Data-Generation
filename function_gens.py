@@ -6,6 +6,10 @@ Contains the base functions needed to generate data. Each function takes a set o
 We have:
     - different variant for each function
     - a random noise addition to y values
+
+Initial problem:
+    - want to generate a library for each function (not discriminate between variants
+        of each)
 """
 
 ################################################################################
